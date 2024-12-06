@@ -1,0 +1,129 @@
+.homecontainer{
+    background: rgb(121,198,202);
+    background: radial-gradient(circle, rgb(127, 202, 206) 0%, rgba(93,149,152,1) 96%);      
+}
+
+@keyframes wave {
+    0% {
+      transform:  translateY(0);
+    }
+    25% {
+      transform: translateY(5px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    75% {
+      transform:  translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+.phone {
+    filter: drop-shadow(-20px 20px 20px #00000058);
+    animation: wave 8s ease-in-out infinite;
+
+}
+  
+/* 
+
+@keyframes shine {
+  0% {
+    background: linear-gradient(107deg, rgba(34,73,75,1) 0%, rgba(121,198,202,1) 0%, rgba(34,73,75,1) 96%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  25%{
+    background: linear-gradient(107deg, rgba(34,73,75,1) 0%, rgba(121,198,202,1) 25%, rgba(34,73,75,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }  
+  50%{
+    background: linear-gradient(107deg, rgba(34,73,75,1) 0%, rgba(121,198,202,1) 25%, rgba(34,73,75,1) 96%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  75%{
+    background: linear-gradient(107deg, rgba(34,73,75,1) 0%, rgba(121,198,202,1) 75%, rgba(34,73,75,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100%{
+    background: linear-gradient(107deg, rgba(34,73,75,1) 0%, rgba(121,198,202,1) 100%, rgba(34,73,75,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+}
+
+
+.myshine{
+  animation: shine 2s ease-in-out infinite;
+
+} */
+
+
+
+
+
+/* 
+@keyframes shine {
+  0% {
+    background: linear-gradient(107deg, rgba(34,73,75,1) 0%, rgba(121,198,202,1) 10%, rgba(34,73,75,1) 90%);
+    background-size: 500%;
+    background-position: 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  50% {
+    background-position: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background-position: 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.myshine {
+  animation: shine 1s ease-in-out infinite;
+} */
+
+
+@keyframes shine {
+  0% {
+    background: linear-gradient(107deg, rgba(34,73,75,1) 0%, rgba(121,198,202,1) 6%, rgba(34,73,75,1) 11%);
+    background-size: 2000%;
+    background-position: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: linear-gradient(107deg, rgba(34,73,75,1) 0%, rgba(121,198,202,1) 6%, rgba(34,73,75,1) 11%);
+    background-size: 2000%;
+    background-position: 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  /* 100% {
+    background: linear-gradient(107deg, rgba(34,73,75,1) 0%, rgba(121,198,202,1) 6%, rgba(34,73,75,1) 11%);
+    background-size: 1000%;
+    background-position: 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  } */
+}
+
+.myshine {
+  animation: shine 3s ease-in-out infinite; /* Adjust duration as needed */
+}
+
+.blurr {
+  backdrop-filter: blur(20px); /* Adjust the value to achieve the desired blur */
+  -webkit-backdrop-filter: blur(20px); /* For better compatibility with Safari */
+}
