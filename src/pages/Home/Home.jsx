@@ -36,7 +36,7 @@ function Home() {
                 <div className='md:mt-28 mt-14  flex md:flex-row flex-col  h-4/6 px-5 md:px-16  w-full'>
                     <div className='md:w-2/6 slide-animation-l-r h-full pt-10'>
                         <h1 className='text-[#22494b] montserrat md:text-2xl md:w-3/4 text-left font-extrabold'>Shop Smart, Save Big – <span className='font-light'>Discover Exclusive Deals and Discounts on Your Favorite Products!</span></h1>
-                        <div className='mt-5 bg-black px-5 w-fit py-2 md:py-3  rounded-md shadow-xl shadow-neutral-800/50 '>
+                        <div className='mt-5 cursor-pointer bg-black px-5 w-fit py-2 md:py-3  rounded-md shadow-xl shadow-neutral-800/50 '>
                             <AnimatedShinyText className='text-xs' children='Find the Best Deals Near You!    >>' />
                         </div>
                     </div>
@@ -52,7 +52,7 @@ function Home() {
                 <div className='md:h-1/6 rise-animation w-full md:mt-0 mt-10   md:px-16 flex flex-col-reverse  md:flex-row p-3 gap-2 md:gap-0 md:items-start items-center  justify-between '>
                     <div className='md:w-2/6 flex flex-col md:items-start items-center'>
                         <h1 className='text-center md:text-left w-full text-[#22494b] tracking-wider text-xs'>
-                            We believe in building lasting partnerships with our clients. Together, we create opportunities for growth. <br className='md:hidden'/><span className='font-semibold text-base myshine poppins ' onClick={()=>window.location.href='https://spenmax.in/user-register'}>  Signup Now  </span>
+                            We believe in building lasting partnerships with our clients. Together, we create opportunities for growth. <br className='md:hidden'/><span className='font-semibold text-base myshine poppins cursor-pointer ' onClick={()=>window.location.href='https://users.spenmax.in/user-register'}>  Signup Now  </span>
                         </h1>
                         <div className='flex flex-row  gap-4 text-[10px] mt-3 cursor-pointer'>
                             <p className='hover:text-neutral-200 transition-all ease-in-out duration-300' onClick={()=>navigate('/privacypolicy')}>Privacy Policy</p>

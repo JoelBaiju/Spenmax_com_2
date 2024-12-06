@@ -39,7 +39,7 @@ function Header() {
                 <button className='py-2 px-5 mx-2 rounded-3xl bg-black/20 text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90'>Packages</button>
             </div>
             <div className='flex flex-row justify-center items-center'>
-                <button className='px-5 py-2 bg-transparent border-2 hover:bg-white hover:text-black duration-300 ease-in-out transition-all rounded-3xl text-[#f2ffff] font-bold border-[#9bc8cb]' onClick={()=>window.location.href='https://spenmax.in/Vendor-register'}>Join As Partner</button>
+                <button className='px-5 py-2 bg-transparent border-2 hover:bg-white hover:text-black duration-300 ease-in-out transition-all rounded-3xl text-[#f2ffff] font-bold border-[#9bc8cb]' onClick={()=>window.location.href='https://users.spenmax.in/Vendor-register'}>Join As Partner</button>
             </div>
         </div>
 
@@ -55,7 +55,7 @@ function Header() {
                 <button className='py-2 px-5 mx-2 w-40 rounded-3xl bg-[#22494b] text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90'>Home</button>
                 <button className='py-2 px-5 mx-2 w-40 rounded-3xl bg-[#22494b] text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90'>Vendors</button>
                 <button className='py-2 px-5 mx-2 w-40 rounded-3xl bg-[#22494b] text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90'>Packages</button>
-                <button className='px-5 py-2 bg-transparent border-2 hover:bg-white hover:text-black rounded-3xl text-[#f2ffff] font-bold border-[#9bc8cb]' onClick={()=>window.location.href='https://spenmax.in/Vendor-register'}>Join As Partner</button>
+                <button className='px-5 py-2 bg-transparent border-2 hover:bg-white hover:text-black rounded-3xl text-[#f2ffff] font-bold border-[#9bc8cb]' onClick={()=>window.location.href='https://users.spenmax.in/Vendor-register'}>Join As Partner</button>
             </div>
             
         </div>
