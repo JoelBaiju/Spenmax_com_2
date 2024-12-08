@@ -1,0 +1,62 @@
+/* .cardcontainer {
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    overflow: visible;
+  }
+  
+  
+  
+  .cardcontainer::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .vendorcard{
+    transition: all 1s ease-in-out;
+    display: none;
+  } */
+
+
+
+  .cardcontainer {
+    position: relative;
+    height: 300px; 
+    
+  }
+  
+  .vendorcard {
+
+    transform: translateX(400%);
+    opacity: 0; 
+    transition: transform 0.5s ease, scale 0.5s ease;
+  }
+  
+
+
+/* 
+   .cardcontainer {
+    position: relative;
+    height: 300px; 
+    width: 50rem; 
+  }
+  
+  .vendorcard {
+ 
+    transform: translateX(50%) scale(0.7);
+    opacity: 0; 
+    transition: transform 0.5s ease, scale 0.5s ease, opacity 0.5s ease;
+  }
+   */
+
+
+   /* Remove all default styles for select */
+select {
+    all: unset; /* Removes all inherited styles */
+  
+}
+
+/* Remove default styles for option elements */
+select option {
+  all: unset; /* Removes all inherited styles */
+ 
+}

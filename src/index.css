@@ -17,5 +17,14 @@
   font-style: normal;
 }
 
+body{
+  overflow-x: hidden;
+}
 
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
 
+.carousel {
+  scrollbar-width: none; 
+}

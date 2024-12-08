@@ -1,0 +1,13 @@
+#vcardmain{
+    background-image: url('../../src/assets/images/oooscillate.png');
+    background-size: 200%;
+    
+}
+
+.benefits ::-webkit-scrollbar{
+    display: none;
+}
+
+.benefits{
+    scrollbar-width: none;
+}
