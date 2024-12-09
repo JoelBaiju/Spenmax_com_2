@@ -11,6 +11,8 @@ function Header() {
         const navicon=document.getElementById('navicon')
         navicon.classList.add('rotate-45')
         nav.classList.remove('opacity-0')
+        nav.classList.remove('hidden'); 
+        nav.classList.remove('translate-Y-[400%]'); 
         document.body.style.overflowY='hidden';
     }
 
@@ -20,6 +22,9 @@ function Header() {
         const navicon=document.getElementById('navicon')
         navicon.classList.remove('rotate-45')
         nav.classList.add('opacity-0')
+        nav.classList.add('hidden'); 
+        nav.classList.add('translate-Y-[400%]'); 
+
         document.body.style.overflowY='scroll';
 
     }
@@ -38,7 +43,7 @@ function Header() {
             </div>
 
             <div className='flex flex-row justify-center items-center'>
-                <button className='py-2 px-5 mx-2 rounded-3xl bg-black/20 text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90' onClick={()=>handlenav(' ')}>Home</button>
+                <button className=' py-2 px-5 mx-2 rounded-3xl bg-black/20 text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90' onClick={()=>handlenav(' ')}>Home</button>
                 <button className='py-2 px-5 mx-2 rounded-3xl bg-black/20 text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90' onClick={()=>handlenav('/vendors')}>Vendors</button>
                 <button className='py-2 px-5 mx-2 rounded-3xl bg-black/20 text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90' onClick={()=>handlenav('/pricing')}>Packages</button>
             </div>
@@ -55,7 +60,7 @@ function Header() {
                 <button id='navicon' onClick={dropped?hide:drop}><img src={menu} className='transition-all ease-in-out duration-500 h-8'/></button>
             </div>
 
-            <div id='nav' className='opacity-0 w-full h-96 flex flex-col gap-2 backdrop-blur-xl pt-10  justify-start items-center transition-all ease-in-out duration-700'>
+            <div id='nav' className='opacity-0 hidden w-full h-screen flex flex-col gap-2 backdrop-blur-xl pt-10  justify-start items-center transition-all ease-in-out duration-700'>
                 <button className='py-2 px-5 mx-2 w-40 rounded-3xl bg-[#22494b] text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90'  onClick={()=>handlenav('')}>Home</button>
                 <button className='py-2 px-5 mx-2 w-40 rounded-3xl bg-[#22494b] text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90' onClick={()=>handlenav('/vendors')}>Vendors</button>
                 <button className='py-2 px-5 mx-2 w-40 rounded-3xl bg-[#22494b] text-sm font-medium poppins text-white hover:text-black transition-all ease-in-out duration-1000 hover:scale-105 hover:bg-white/90' onClick={()=>handlenav('/pricing')}>Packages</button>

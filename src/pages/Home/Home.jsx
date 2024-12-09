@@ -12,11 +12,11 @@ import Footer from '../../components/Footer'
 function Home() {
     const navigate=useNavigate()
 
-//     const redirectToWhatsApp = (id) => {
-//         const phoneNumber = '9048001820';
-//         const whatsappUrl = `https://wa.me/${phoneNumber}`;
-//         window.open(whatsappUrl, '_blank');
-//     }
+    const redirectToWhatsApp = (id) => {
+        const phoneNumber = '9048001820';
+        const whatsappUrl = `https://wa.me/${9037975042}`;
+        window.open(whatsappUrl, '_blank');
+    }
 
     return (
         <div className='relative md:mt-36 flex flex-col items-end  justify-center  h-full w-full gap-y-4'>
@@ -45,7 +45,7 @@ function Home() {
                     </div>
                     <div className='md:w-2/6 h-full slide-animation-r-l pt-10 flex flex-col items-end gap-y-4'>
                         <h1 className='text-right'><span className='font-bold montserrat'>Have Questions</span> <br />or Need Assistance? Let’s Get Started!</h1>
-                        <button className='h-8 shadow-neutral-800/50 shadow-lg w-40 text-center bg-[#387478] rounded-3xl text-xs text-[#f2ffff] font-light '>Contact Us Today</button>
+                        <button className='h-8 shadow-neutral-800/50 shadow-lg w-40 text-center bg-[#387478] rounded-3xl text-xs text-[#f2ffff] font-light ' onClick={redirectToWhatsApp}>Contact Us Today</button>
                     </div>
                 </div>
                 

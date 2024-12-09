@@ -7,12 +7,14 @@ import CustomCarousel from "../../components/CustomCarousel";
 import pin from '../../assets/images/pin.png'
 function Vendors() {
 
-    const [vendors, setvendors] = useState('')
-    const [left, setLeft] = useState(0);
     const [animating, setAnimating] = useState(false);
+    const [vendors, setvendors] = useState('')
+
+    const [left, setLeft] = useState(0);
     const center = (left + 1) % vendors.length;
     const right = (left + 2) % vendors.length;
     const nextIndex = (left + 3) % vendors.length;
+
     const [latitude, setLatitude] = useState("");
     const [longitude, setLongitude] = useState("");
     const [district, setDistrict] = useState("Thiruvananthapuram");
@@ -58,25 +60,50 @@ function Vendors() {
     };
 
     useEffect(() => {
+        if (!vendors || vendors.length === 0) {
+            console.warn("Vendors array is empty or undefined.");
+            return;
+        }
+    
         const leftelement = document.getElementById(`card-${left}`);
         const centerelement = document.getElementById(`card-${center}`);
         const rightelement = document.getElementById(`card-${right}`);
         const nextElement = document.getElementById(`card-${nextIndex}`);
-        try {
+    
+        console.log('useEffect triggered');
+        console.log(left, center, right, nextIndex);
+    
+        // Safeguard against null elements
+        if (leftelement) {
             leftelement.style.transform = "translateX(400%) scale(0.7)";
-            leftelement.style.opacity = "0"
+            leftelement.style.opacity = "0";
+        } else {
+            console.warn(`Element with id card-${left} not found.`);
+        }
+    
+        if (centerelement) {
             centerelement.style.transform = "translateX(0) scale(0.7)";
-            centerelement.style.opacity = "1"
+            centerelement.style.opacity = "1";
+        } else {
+            console.warn(`Element with id card-${center} not found.`);
+        }
+    
+        if (rightelement) {
             rightelement.style.transform = "translateX(100%) scale(1)";
-            rightelement.style.opacity = "1"
+            rightelement.style.opacity = "1";
+        } else {
+            console.warn(`Element with id card-${right} not found.`);
+        }
+    
+        if (nextElement) {
             nextElement.style.transform = "translateX(200%) scale(0.7)";
-            nextElement.style.opacity = "1"
+            nextElement.style.opacity = "1";
+        } else {
+            console.warn(`Element with id card-${nextIndex} not found.`);
         }
-        catch {
-
-        }
-
-    }, [left]);
+    }, [left, vendors]);
+    
+    
 
     setTimeout(() => {
 
@@ -149,7 +176,7 @@ function Vendors() {
 
             </div>
 
-            <div className=" md:w-7/12  md:flex flex-col items-s">
+            <div className=" md:w-7/12  md:flex flex-col p-5 items-s">
                 {/* <div className="cardcontainer relative w-full gap-2 overflow-hidden">
                     {vendors?vendors.map((vendor, index) => (
                         <div
@@ -161,11 +188,11 @@ function Vendors() {
                         </div>
                     )):<h1>eogndsngdsgdspgpghdsgheogigeshidshidshoiudeshgiupohgoigiuoashj</h1>}
                 </div> */}
-                <div className='flex w-full benefits gap-3 overflow-x-scroll '>
+                <div className='flex w-full   benefits gap-3 overflow-x-scroll '>
                     {
                         vendors ? vendors.map((i, index) => (
                             <VendorsCard data={i} />
-                        )) : ''
+                        )) : '' 
                     }
                 </div>
             </div>

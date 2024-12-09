@@ -4,6 +4,7 @@ import playstore from '../../src/assets/images/play-removebg-preview 1@2x.png'
 
 function Footer() {
     const navigate =useNavigate()
+
     return (
 
         <div className='md:h-1/6 rise-animation w-full md:mt-0 mt-10   md:px-16 flex flex-col-reverse  md:flex-row p-3 gap-2 md:gap-0 md:items-start items-center  justify-between '>
