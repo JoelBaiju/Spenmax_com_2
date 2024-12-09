@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5c9e8cb2.css",
-    "main.js": "/static/js/main.ea718d4f.js",
+    "main.css": "/static/css/main.5b66cc12.css",
+    "main.js": "/static/js/main.3ebba9ed.js",
     "static/js/453.0099e227.chunk.js": "/static/js/453.0099e227.chunk.js",
     "static/media/iphone13.png": "/static/media/iphone13.0cb5353ee9724a3a1efa.png",
     "static/media/oooscillate.png": "/static/media/oooscillate.ad5607d0a6e76b723919.png",
@@ -11,12 +11,12 @@
     "static/media/shopping-cart.png": "/static/media/shopping-cart.e74f61edf5e0d2231aed.png",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.5c9e8cb2.css.map": "/static/css/main.5c9e8cb2.css.map",
-    "main.ea718d4f.js.map": "/static/js/main.ea718d4f.js.map",
+    "main.5b66cc12.css.map": "/static/css/main.5b66cc12.css.map",
+    "main.3ebba9ed.js.map": "/static/js/main.3ebba9ed.js.map",
     "453.0099e227.chunk.js.map": "/static/js/453.0099e227.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c9e8cb2.css",
-    "static/js/main.ea718d4f.js"
+    "static/css/main.5b66cc12.css",
+    "static/js/main.3ebba9ed.js"
   ]
 }
