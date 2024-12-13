@@ -8,14 +8,24 @@ import RefundPolicy from './components/Privacy&Terms/RefundPolicy';
 import Home from './pages/Home/Home';
 import Vendors from './pages/Vendors/Vendors';
 import Pricing from './pages/Prcicing/Pricing';
+import Loading from './components/Loading/Loading';
+import { useState } from 'react';
 function App() {
+  const [isloading,setloading]=useState(false)
+  const startloading =()=>{
+    setloading(true)
+  }
+  const stoploading=()=>{
+    setloading(false)
+  }
+
   return (
-    <div className=" w-screen md:h-screen  ">
-      
+    <div className="relative w-screen md:h-screen  ">
+        {isloading ? <Loading/> : ''}
         <Routes>
           <Route path='/' element={<Capital/>}>
             <Route path='' element={<Home/>} />
-            <Route path='/vendors' element={<Vendors/>}/>
+            <Route path='/vendors' element={<Vendors startloading={startloading} stoploading={stoploading}/>}/>
             <Route path='/pricing' element={<Pricing/>}/>
           </Route>
 

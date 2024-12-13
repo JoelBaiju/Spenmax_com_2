@@ -36,7 +36,7 @@ function Header() {
     return (
 
     
-    <div className='w-full absolute z-50 flex flex-col justify-center items-center'>
+    <div className='w-full absolute z-40 flex flex-col justify-center items-center'>
         <div className='hidden md:flex w-full h-full pt-6 px-16  flex-row justify-between items-center fall-animation'>
             <div className='h-full flex flex-row justify-center items-center'>
                 <img src={logo} className='h-8' alt="" />
