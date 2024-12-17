@@ -97,10 +97,12 @@ const LocalitySearch = ({setvendors,startloading,stoploading}) => {
       {results.length > 0 && (
         <ul style={{ marginTop: "20px", listStyleType: "none", padding: 0 }}>
           <li
-            style={{ cursor: "pointer", padding: "10px", background: "#f0f0f0" }}
+          className="bg-white/50 flex justify-between items-center"
+            style={{ cursor: "pointer", padding: "10px" }}
             onClick={() => handleSelectSuggestion(results[0].place_name)}
           >
             {getFirstWord(results[0].place_name)}
+            <i class="fa-solid fa-arrow-up -rotate-45"></i>
           </li>
         </ul>
       )}

@@ -1,10 +1,8 @@
 import React from 'react'
 import './VendorsCard.css'
 import bg from '../assets/images/oooscillate.png'
-function VendorsCard({ data }) {
+function VendorsCard({ data,opendetails }) {
 
-    console.log('sngoiehgoinngeon')
-    console.log(data.State)
     return (
         <div  className='  relative  text-white backdrop-blur-3xl rounded-2xl flex justify-between flex-col '>
             <img src={bg} className='blur-sm absolute w-full' alt="" />
@@ -32,7 +30,7 @@ function VendorsCard({ data }) {
                     </div>
                 </div>
                 <div className=' p-2 w-full flex flex-row justify-center'>
-                    <button className='bg-black px-4 py-1 rounded-md ' onClick={()=>window.location.href='https://users.spenmax.in/user-register '}><h1 className='font-semibold text-sm myshine_gray'>Exclusive Offers</h1></button>
+                    <button className='bg-black px-4 py-1 rounded-md ' onClick={()=>opendetails(data.id,data.company_name)}><h1 className='font-semibold text-sm myshine_gray'>Exclusive Offers</h1></button>
                 </div>
             </div>
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import VendorsCard from "../../components/VendorsCard";
 import "./Vendors.css";
 import LocalitySearch from "../../components/LocalitySearch";
+import VendorOffersModal from "./VendorOffersModal";
+import axios from "axios";
 
 function Vendors({ startloading, stoploading }) {
 
@@ -61,7 +63,7 @@ function Vendors({ startloading, stoploading }) {
                 const response = await fetch(`https://spenmax.in/api/shop/vendor/branches/user/`);
                 if (response.ok) {
                     const data = await response.json();
-                    console.log("Response Data:", data);
+                    // console.log("Response Data:", data);
                     setvendors(data)
                 } else {
                     console.error("Failed to fetch pricing. Status:", response.status);
@@ -77,7 +79,7 @@ function Vendors({ startloading, stoploading }) {
 
                     if (response.ok) {
                         const data = await response.json();
-                        console.log("Response Data:", data);
+                        // console.log("Response Data:", data);
                         setvendors(data)
                     } else {
                         console.error("Failed to fetch pricing. Status:", response.status);
@@ -97,6 +99,27 @@ function Vendors({ startloading, stoploading }) {
 
 
 
+    const [vendorDetails, setvendorDetails] = useState();
+    const [showModal, setShowModal] = useState(false);
+    const [storeName, setstoreName] = useState('');
+
+    const openModal = async (id, storeName) => {
+        try {
+            const response = await axios.get(`https://spenmax.in/api/shop/branches/${id}/offers/`);
+            console.log(response.data);
+            setvendorDetails(response.data)
+            setstoreName(storeName)
+            setShowModal(true);  // Show the modal once data is fetched
+        } catch (error) {
+            console.error('Error fetching offers:', error);
+        }
+    };
+
+
+
+    const closeModal = () => setShowModal(false);
+
+
 
 
 
@@ -110,35 +133,28 @@ function Vendors({ startloading, stoploading }) {
                         <p className='myshine_gray text-sm font-semibold mr-2'>  Fetch Vendors near you <i className="fa-solid fa-location-dot ml-4" style={{ color: "#ededed;" }} /> </p>
                     </div>
                     <div className="w-full">
-                    <LocalitySearch setvendors={setvendors} startloading={startloading} stoploading={stoploading}/>
+                        <LocalitySearch setvendors={setvendors} startloading={startloading} stoploading={stoploading} />
                     </div>
-                   
 
                 </div>
 
             </div>
 
+            <VendorOffersModal show={showModal} storeName={storeName} closeModal={closeModal} data={vendorDetails} />
+
+
             <div className=" md:w-7/12  md:flex flex-col p-5 items-s">
-                {/* <div className="cardcontainer relative w-full gap-2 overflow-hidden">
-                    {vendors?vendors.map((vendor, index) => (
-                        <div
-                            key={index}
-                            id={`card-${index}`}
-                            className="vendorcard absolute transition-all duration-500"
-                        >
-                            <VendorsCard data={vendor} />
-                        </div>
-                    )):<h1>eogndsngdsgdspgpghdsgheogigeshidshidshoiudeshgiupohgoigiuoashj</h1>}
-                </div> */}
+
                 <div className='flex w-full   benefits gap-3 overflow-x-scroll '>
                     {
                         vendors.length != 0 ? vendors.map((i, index) => (
-                            <VendorsCard data={i} />
+                            <VendorsCard data={i} opendetails={openModal} />
                         )) : 'No vendors in your location'
                     }
 
                 </div>
             </div>
+
 
 
 
