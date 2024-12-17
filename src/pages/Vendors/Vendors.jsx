@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import VendorsCard from "../../components/VendorsCard";
 import "./Vendors.css";
+import LocalitySearch from "../../components/LocalitySearch";
 
-function Vendors({startloading,stoploading}) {
+function Vendors({ startloading, stoploading }) {
 
     const [vendors, setvendors] = useState('')
 
@@ -20,7 +21,7 @@ function Vendors({startloading,stoploading}) {
             return null;
         }
     }
-    
+
     async function fetchLocationDetails(apiKey, lat, long) {
         const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat},${long}&key=${apiKey}`;
         try {
@@ -36,44 +37,28 @@ function Vendors({startloading,stoploading}) {
             return null;
         }
     }
-    
-        const getlocation = async() => {
-            const apiKey = "914daea5797d46cba512d1027b34c202";
-            const location = await getDeviceLocation();
-            if (location) {
-                const { latitude, longitude } = location;
-                const response = await fetchLocationDetails(apiKey, latitude, longitude);
-                if (response) {
-                    return ( response.results[0].components.state_district);
-                } else {
-                    console.log("Failed to fetch location details.");
-                }
-            } else {
-                console.log("Device location could not be determined.");
-            }
-        };
-    
 
-        const fetchvendors = async (all) => {
-            try{
-                if(all){
-                    const response = await fetch(`https://spenmax.in/api/shop/vendor/branches/user/`);
-                    if (response.ok) {
-                        const data = await response.json();
-                        console.log("Response Data:", data);
-                        setvendors(data)
-                    } else {
-                        console.error("Failed to fetch pricing. Status:", response.status);
-                    }
-                }
-                else{
-                    startloading()
-                
-                const address= await getlocation()
-                console.log('address:',address)
-                if (address){
-                const response = await fetch(`https://spenmax.in/api/shop/vendor/branches/user/?search=${address}`);
-                
+    const getlocation = async () => {
+        const apiKey = "914daea5797d46cba512d1027b34c202";
+        const location = await getDeviceLocation();
+        if (location) {
+            const { latitude, longitude } = location;
+            const response = await fetchLocationDetails(apiKey, latitude, longitude);
+            if (response) {
+                return (response.results[0].components.state_district);
+            } else {
+                console.log("Failed to fetch location details.");
+            }
+        } else {
+            console.log("Device location could not be determined.");
+        }
+    };
+
+
+    const fetchvendors = async (all) => {
+        try {
+            if (all) {
+                const response = await fetch(`https://spenmax.in/api/shop/vendor/branches/user/`);
                 if (response.ok) {
                     const data = await response.json();
                     console.log("Response Data:", data);
@@ -82,18 +67,34 @@ function Vendors({startloading,stoploading}) {
                     console.error("Failed to fetch pricing. Status:", response.status);
                 }
             }
+            else {
+                startloading()
+
+                const address = await getlocation()
+                console.log('address:', address)
+                if (address) {
+                    const response = await fetch(`https://spenmax.in/api/shop/vendor/branches/user/?search=${address}`);
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log("Response Data:", data);
+                        setvendors(data)
+                    } else {
+                        console.error("Failed to fetch pricing. Status:", response.status);
+                    }
+                }
                 stoploading()
-        }
-            } catch (error) {
-                console.error("An error occurred while fetching pricing:", error);
             }
-        };
-    
-        useEffect(()=>{
-            
-            fetchvendors(true)
-        },[])
-  
+        } catch (error) {
+            console.error("An error occurred while fetching pricing:", error);
+        }
+    };
+
+    useEffect(() => {
+
+        fetchvendors(true)
+    }, [])
+
 
 
 
@@ -104,11 +105,14 @@ function Vendors({startloading,stoploading}) {
             <div className="md:w-5/12 p-10">
                 <h1 className="text-xl montserrat"> <span className="myshine_green">Discover</span> exclusive offers <br /> from our diverse selection of vendors across all categories! </h1>
 
-                <div>
-                    <div onClick={()=>fetchvendors(false)} className='mt-5 cursor-pointer bg-black px-5 w-fit py-2 md:py-3 flex hover:scale-105 transition-all ease-out duration-500  rounded-md shadow-xl shadow-neutral-800/50 '>
-                        <p className='myshine_gray text-sm font-semibold mr-2'>  Find Vendors near you <i className="fa-solid fa-location-dot ml-4" style={{ color: "#ededed;"}}/> </p>
+                <div className="w-72">
+                    <div onClick={() => fetchvendors(false)} className='mt-5 cursor-pointer bg-black px-5 w-full py-2 md:py-3 flex hover:scale-105 transition-all ease-out duration-500  rounded-md shadow-xl shadow-neutral-800/50 '>
+                        <p className='myshine_gray text-sm font-semibold mr-2'>  Fetch Vendors near you <i className="fa-solid fa-location-dot ml-4" style={{ color: "#ededed;" }} /> </p>
                     </div>
-
+                    <div className="w-full">
+                    <LocalitySearch setvendors={setvendors} startloading={startloading} stoploading={stoploading}/>
+                    </div>
+                   
 
                 </div>
 
@@ -128,11 +132,11 @@ function Vendors({startloading,stoploading}) {
                 </div> */}
                 <div className='flex w-full   benefits gap-3 overflow-x-scroll '>
                     {
-                        vendors.length!=0 ? vendors.map((i, index) => (
+                        vendors.length != 0 ? vendors.map((i, index) => (
                             <VendorsCard data={i} />
-                        )) : 'No vendors in your location' 
+                        )) : 'No vendors in your location'
                     }
-                    
+
                 </div>
             </div>
 
