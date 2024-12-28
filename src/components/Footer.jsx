@@ -20,7 +20,7 @@ function Footer() {
             </div>
             <div className='flex flex-col md:items-end gap-2 '>
                 <h1 className='poppins text-sm font-light '>Start your savings journey!</h1>
-                <button className=' text-xl font-semibold poppins text-[#22494b]   py-1 px-4 rounded-3xl' onClick={()=>window.location.href='https://spenmax.in/api/user/download-apk/'}>Download Here</button>
+                <button className=' text-xl font-semibold poppins text-[#22494b]   py-1 px-4 rounded-3xl' onClick={()=>window.location.href='https://play.google.com/store/apps/details?id=com.appmine.spenmax&pli=1'}>Download Here</button>
             </div>
         </div>
     )
