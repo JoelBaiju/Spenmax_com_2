@@ -35,7 +35,8 @@ function Home() {
 
                 <div className='  flex md:flex-row flex-col  h-4/6 px-5 md:px-16  w-full'>
                     <div className='md:w-2/6 slide-animation-l-r h-full pt-10'>
-                        <h1 className='text-[#22494b] montserrat md:text-2xl md:w-3/4 text-left font-extrabold'>Shop Smart, Save Big – <span className='font-light'>Discover Exclusive Deals and Discounts on Your Favorite Products!</span></h1>
+                        <h1 className='text-[#22494b] montserrat md:text-2xl md:w-3/4 text-left font-extrabold'><span className='font-light'>Discover exclusive deals & discounts on top products! </span>Shop Smart, Save Big – <span className='font-light'>with unbeatable offers</span></h1>
+                        <p className='text-[#22494b] poppins text-xs font-light'> Promo codes & more. Start shopping now and unlock huge savings!</p>
                         <div className='mt-5 cursor-pointer bg-black px-5 w-fit py-2 md:py-3  rounded-md shadow-xl shadow-neutral-800/50 '>
                             <p className='myshine_gray text-sm font-semibold' onClick={()=>navigate('/vendors')}>  Find the Best Deals Near You! &gt;&gt; </p>
                         </div>
