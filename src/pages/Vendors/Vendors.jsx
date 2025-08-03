@@ -60,7 +60,7 @@ function Vendors({ startloading, stoploading }) {
     const fetchvendors = async (all) => {
         try {
             if (all) {
-                const response = await fetch(`https://backend.spenmax.in/api/shop/vendor/branches/user/`);
+                const response = await fetch(`https://spenmax.in/api/shop/vendor/branches/user/`);
                 if (response.ok) {
                     const data = await response.json();
                     // console.log("Response Data:", data);
@@ -75,7 +75,7 @@ function Vendors({ startloading, stoploading }) {
                 const address = await getlocation()
                 console.log('address:', address)
                 if (address) {
-                    const response = await fetch(`https://backend.spenmax.in/api/shop/vendor/branches/user/?search=${address}`);
+                    const response = await fetch(`https://spenmax.in/api/shop/vendor/branches/user/?search=${address}`);
 
                     if (response.ok) {
                         const data = await response.json();
@@ -105,7 +105,7 @@ function Vendors({ startloading, stoploading }) {
 
     const openModal = async (id, storeName) => {
         try {
-            const response = await axios.get(`https://backend.spenmax.in/api/shop/branches/${id}/offers/`);
+            const response = await axios.get(`https://spenmax.in/api/shop/branches/${id}/offers/`);
             console.log(response.data);
             setvendorDetails(response.data)
             setstoreName(storeName)
