@@ -10,7 +10,7 @@ function Pricing() {
 
   const fetchpricing = async () => {
     try {
-      const response = await fetch(`https://spenmax.in/api/shop/package_option/all_user/?type=${tier}`);
+      const response = await fetch(`https://backend.spenmax.in/api/shop/package_option/all_user/?type=${tier}`);
 
       if (response.ok) {
         const data = await response.json();
